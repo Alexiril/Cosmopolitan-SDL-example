@@ -45,6 +45,10 @@ To open it in Windows just open the application *(sdltest.exe for example)* in t
 *Why there's no normal CMakeLists or Makefile?.. \
 Well, I don't have enough skills to make a good makefile, cmake file or a bash script for this case. Even though, there is an example for makefile for Cosmopolitan projects. So, here is Python script. (Yeah, that's dumb :)*
 
+If there will be a problem with compiling because compiler won't find SDL real config (in debian systems), you need to open the file `/usr/include/SDL2/SDL_config.h` and change include `SDL2/__SDL_real_config.h` to just `__SDL_real_config.h` (remove the path). If you don't do it, you have to include entire `/usr/include/x86_64-linux-gnu` and that will corrupt the build even harder, because the compiler will try to include the headers from the folder.
+
+### Using
+
 Most of functions from SDL2, SDL2 mixer, SDL2 net, SDL2 image, SDL2 ttf were linked. You can access them using SDL2::FunctionName(arguments).
 
 **Please, don't use SDL_FunctionName**, it won't work because in the application start SDL won't be linked the needed way to do so.
