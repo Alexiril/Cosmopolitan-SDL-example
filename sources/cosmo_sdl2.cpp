@@ -4006,6 +4006,10 @@ namespace SDL2 {
     }
 
     void UnloadLibrary() {
+        cosmo_dlclose(::sdlnetlibptr);
+        cosmo_dlclose(::sdlmixlibptr);
+        cosmo_dlclose(::sdlttflibptr);
+        cosmo_dlclose(::sdlimglibptr);
         cosmo_dlclose(::sdllibptr);
         ::loaded = false;
     }

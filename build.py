@@ -1,10 +1,3 @@
-# A script that starts all the processes of building
-
-# I don't know how to make a good makefile or bash scripts, I'm sorry
-# And it was too difficult to make a good working CMake file also
-# So, here is Python
-# (Yeah, no caching unchanged builded files here...)
-
 # VARIABLES
 
 build_folder = "build_dir"
